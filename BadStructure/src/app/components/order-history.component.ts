@@ -1,0 +1,12 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-order-history',
+  template: `
+  <div class="order-history">
+    <h2>Order History</h2>
+    <p>Your order history will be displayed here.</p>
+</div>`,
+  standalone: true,
+})
+export class OrderHistoryComponent { }

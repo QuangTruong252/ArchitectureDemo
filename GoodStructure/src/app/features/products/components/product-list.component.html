@@ -1,0 +1,20 @@
+<div class="product-list-container">
+  <div class="filters">
+    <select (change)="onCategoryChange($event)">
+      <option value="all">All Categories</option>
+      <option value="electronics">Electronics</option>
+      <option value="clothing">Clothing</option>
+      <option value="books">Books</option>
+    </select>
+  </div>
+
+  <div class="loading" *ngIf="loading$ | async">
+    Loading products...
+  </div>
+
+  <div class="products-grid" *ngIf="!(loading$ | async)">
+    <app-product-card *ngFor="let product of filteredProducts$ | async" [product]="product"
+      (addToCart)="onAddToCart(product)">
+    </app-product-card>
+  </div>
+</div>
